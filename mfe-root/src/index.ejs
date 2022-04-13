@@ -66,6 +66,9 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
   <% } %>
 
+  <!-- react and react-dom are dependencies, because they are shared by all
+  of the app. this way there aren't 4 copies of react being deployed and 
+  bloating our build for no reason -->
   <% if (isLocal) { %>
     <script type="systemjs-importmap">
       {
