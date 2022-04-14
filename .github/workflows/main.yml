@@ -1,20 +1,16 @@
-name: CI
+name: Micro Frontend Deployments
 
 on:
   push:
-    branches: [ foobar ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy-root:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Smoke check
         run: |
@@ -28,10 +24,14 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: |
+          cd mfe-root
           npm install
       - name: Build production app
         run: |
+          cd mfe-root
           npm run build
+          mkdir -p dist/mfe-root
+          mv dist/*.* dist/mfe-root
       - name: Deploy to S3
         # NEXT make this @0.5.1 once it works, 
         # so that we aren't just using latest version without verification
@@ -43,6 +43,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "build"
+          SOURCE_DIR: "mfe-root/dist"
 
 
+# LEFTOFF lets just create a job for each m-app, and then any change to any will of course build and upload everything.
+# so once i have achieved above, then make it so that the CI checks for changes within each m-app, and only builds + uploads when there is a specific job selected or triggered, similiar to our GITLAB pipelines
