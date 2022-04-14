@@ -22,29 +22,28 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
-      # NEXT need to install dependencies in each apps directory, not repo root
       - name: Install dependencies
         run: |
           cd mfe-root
-          pwd
-          # npm install
-      # NEXT need to build in each apps directory, not repo root
+          npm install
       - name: Build production app
         run: |
-          pwd
-          # npm run build
-#       - name: Deploy to S3
-#         # NEXT make this @0.5.1 once it works, 
-#         # so that we aren't just using latest version without verification
-#         uses: jakejarvis/s3-sync-action@master
-#         with:
-#           args: --acl public-read --delete
-#         env:
-#           AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
-#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           AWS_REGION: ${{ secrets.AWS_REGION }}
-#           SOURCE_DIR: "build"
+          cd mfe-root
+          npm run build
+          mkdir -p dist/mfe-root
+          mv dist/*.* dist/mfe-root
+      - name: Deploy to S3
+        # NEXT make this @0.5.1 once it works, 
+        # so that we aren't just using latest version without verification
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SOURCE_DIR: "mfe-root/dist"
 
 
 # LEFTOFF lets just create a job for each m-app, and then any change to any will of course build and upload everything.
