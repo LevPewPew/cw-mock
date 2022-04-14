@@ -1,20 +1,16 @@
-name: CI
+name: Micro Frontend Deployments
 
 on:
   push:
-    branches: [ foobar ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy-root:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Smoke check
         run: |
@@ -26,23 +22,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
+      # NEXT need to install dependencies in each apps directory, not repo root
       - name: Install dependencies
         run: |
-          npm install
+          cd mfe-root
+          pwd
+          # npm install
+      # NEXT need to build in each apps directory, not repo root
       - name: Build production app
         run: |
-          npm run build
-      - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works, 
-        # so that we aren't just using latest version without verification
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "build"
+          pwd
+          # npm run build
+#       - name: Deploy to S3
+#         # NEXT make this @0.5.1 once it works, 
+#         # so that we aren't just using latest version without verification
+#         uses: jakejarvis/s3-sync-action@master
+#         with:
+#           args: --acl public-read --delete
+#         env:
+#           AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           AWS_REGION: ${{ secrets.AWS_REGION }}
+#           SOURCE_DIR: "build"
 
 
+# LEFTOFF lets just create a job for each m-app, and then any change to any will of course build and upload everything.
+# so once i have achieved above, then make it so that the CI checks for changes within each m-app, and only builds + uploads when there is a specific job selected or triggered, similiar to our GITLAB pipelines
