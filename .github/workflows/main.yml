@@ -52,7 +52,7 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: |
-          cd mfe-root
+          cd home-app
           npm install
       - name: Build production app
         run: |
