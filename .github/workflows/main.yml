@@ -50,20 +50,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "14"
+
       - name: Install dependencies
         run: |
           cd home-app
           npm install
+
       - name: Build production app
         run: |
           cd home-app
           npm run build
           mkdir -p dist/home-app
           mv dist/*.* dist/home-app
+
       - name: Deploy to S3
         # NEXT make this @0.5.1 once it works,
         # so that we aren't just using latest version without verification
@@ -82,20 +86,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "14"
+
       - name: Install dependencies
         run: |
           cd about-app
           npm install
+
       - name: Build production app
         run: |
           cd about-app
           npm run build
           mkdir -p dist/about-app
           mv dist/*.* dist/about-app
+
       - name: Deploy to S3
         # NEXT make this @0.5.1 once it works,
         # so that we aren't just using latest version without verification
@@ -114,20 +122,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "14"
+
       - name: Install dependencies
         run: |
           cd contact-app
           npm install
+
       - name: Build production app
         run: |
           cd contact-app
           npm run build
           mkdir -p dist/contact-app
           mv dist/*.* dist/contact-app
+
       - name: Deploy to S3
         # NEXT make this @0.5.1 once it works,
         # so that we aren't just using latest version without verification
@@ -146,20 +158,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "14"
+
       - name: Install dependencies
         run: |
           cd navbar-app
           npm install
+
       - name: Build production app
         run: |
           cd navbar-app
           npm run build
           mkdir -p dist/navbar-app
           mv dist/*.* dist/navbar-app
+
       - name: Deploy to S3
         # NEXT make this @0.5.1 once it works,
         # so that we aren't just using latest version without verification
