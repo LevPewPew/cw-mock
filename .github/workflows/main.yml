@@ -32,8 +32,18 @@ jobs:
           mkdir -p dist/mfe-root
           mv dist/*.* dist/mfe-root
 
+      - name: Remove existing S3 bucket folder
+        uses: vitorsgomes/s3-rm-action@master
+        with:
+          args: --recursive --exclude "*" --include "mfe-root/*"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works,
+        # NEXT make all the "uses" @SOME_SPECIFIC_VERSION once it works,
         # so that we aren't just using latest version without verification
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -68,9 +78,17 @@ jobs:
           mkdir -p dist/home-app
           mv dist/*.* dist/home-app
 
+      - name: Remove existing S3 bucket folder
+        uses: vitorsgomes/s3-rm-action@master
+        with:
+          args: --recursive --exclude "*" --include "home-app/*"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works,
-        # so that we aren't just using latest version without verification
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
@@ -104,9 +122,17 @@ jobs:
           mkdir -p dist/about-app
           mv dist/*.* dist/about-app
 
+      - name: Remove existing S3 bucket folder
+        uses: vitorsgomes/s3-rm-action@master
+        with:
+          args: --recursive --exclude "*" --include "about-app/*"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works,
-        # so that we aren't just using latest version without verification
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
@@ -140,9 +166,17 @@ jobs:
           mkdir -p dist/contact-app
           mv dist/*.* dist/contact-app
 
+      - name: Remove existing S3 bucket folder
+        uses: vitorsgomes/s3-rm-action@master
+        with:
+          args: --recursive --exclude "*" --include "contact-app/*"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works,
-        # so that we aren't just using latest version without verification
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
@@ -176,9 +210,17 @@ jobs:
           mkdir -p dist/navbar-app
           mv dist/*.* dist/navbar-app
 
+      - name: Remove existing S3 bucket folder
+        uses: vitorsgomes/s3-rm-action@master
+        with:
+          args: --recursive --exclude "*" --include "navbar-app/*"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Deploy to S3
-        # NEXT make this @0.5.1 once it works,
-        # so that we aren't just using latest version without verification
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
