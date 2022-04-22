@@ -54,7 +54,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "mfe-root/dist"
+          SOURCE_DIR: mfe-root/dist
 
   build-and-deploy-home-app:
     runs-on: ubuntu-latest
@@ -99,7 +99,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "home-app/dist"
+          SOURCE_DIR: home-app/dist
 
   build-and-deploy-about-app:
     runs-on: ubuntu-latest
@@ -144,7 +144,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "about-app/dist"
+          SOURCE_DIR: about-app/dist
 
   build-and-deploy-contact-app:
     runs-on: ubuntu-latest
@@ -189,7 +189,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "contact-app/dist"
+          SOURCE_DIR: contact-app/dist
 
   build-and-deploy-navbar-app:
     runs-on: ubuntu-latest
@@ -234,5 +234,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "navbar-app/dist"
-# NEXT check if PATH_TO_DELETE can take no quotes
+          SOURCE_DIR: navbar-app/dist
