@@ -41,7 +41,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          PATH_TO_DELETE: "mfe-root/"
+          PATH_TO_DELETE: mfe-root
 
       - name: Deploy to S3
         # NEXT make all the "uses" @SOME_SPECIFIC_VERSION once it works,
@@ -88,7 +88,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          PATH_TO_DELETE: "home-app/"
+          PATH_TO_DELETE: home-app
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
@@ -133,7 +133,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          PATH_TO_DELETE: "about-app/"
+          PATH_TO_DELETE: about-app
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
@@ -178,7 +178,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          PATH_TO_DELETE: "contact-app/"
+          PATH_TO_DELETE: contact-app
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
@@ -223,7 +223,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          PATH_TO_DELETE: "navbar-app/"
+          PATH_TO_DELETE: navbar-app
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
