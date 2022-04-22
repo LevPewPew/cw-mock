@@ -19,5 +19,8 @@
   "homepage": "https://github.com/LevPewPew/cw-mock#readme",
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "engines": {
+    "node": "14.16.0"
   }
 }
