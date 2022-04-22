@@ -1,0 +1,23 @@
+{
+  "name": "cw-mock",
+  "version": "0.1.0",
+  "description": "microfrontends",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LevPewPew/cw-mock.git"
+  },
+  "author": "Levente Toth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LevPewPew/cw-mock/issues"
+  },
+  "homepage": "https://github.com/LevPewPew/cw-mock#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
