@@ -9,6 +9,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # NEXT probably don't need to deploy the root to S3 like this, i think i will need to change this to deploy to heroku
   build-and-deploy-root:
     runs-on: ubuntu-latest
     steps:

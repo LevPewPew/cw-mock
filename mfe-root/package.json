@@ -1,7 +1,8 @@
 {
   "name": "@acme/root-config",
   "scripts": {
-    "start": "webpack serve --port 9000 --env isLocal",
+    "start:dev": "webpack serve --port 9000 --env isLocal",
+    "start": "node server.js",
     "lint": "eslint src --ext js",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
@@ -35,6 +36,7 @@
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "express": "^4.17.3",
     "single-spa": "^5.9.3"
   }
 }
