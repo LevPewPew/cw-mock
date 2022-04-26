@@ -3,9 +3,9 @@ const path = require("path");
 const PORT = process.env.PORT || 5522;
 
 express()
-  .use(express.static(path.join(__dirname, "mfe-root/dist")))
+  .use(express.static(path.join(__dirname, "dist")))
   .get("*", (req, res) => {
-    res.sendFile("index.html", { root: "mfe-root/dist" });
+    res.sendFile("index.html", { root: "dist" });
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
@@ -16,4 +16,11 @@ express()
   been following i am sure it explains what i should be doing
 
   or should the server be pulling it from s3, not the heroku server/env?
+
+  -----
+
+  i have pulled all server and mre-root to root of the repo, and then i realised
+  i didn't update the file being sent to just be "dist". but now nothing will build on heroku!!!! 
+  it just times out!!! i am pretty sure it is a heroku problem, but if it is not resolved in morning 
+  i am switching to AWS EC2
   */
