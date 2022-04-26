@@ -10,8 +10,8 @@ export default function Root(props) {
           alt="log rocket logo"
         />
       </div>
-      <h1 class="cover-heading">About Us!</h1>
-      <p class="lead">
+      <h1 className="cover-heading">About Us!</h1>
+      <p className="lead">
         Hey, what's up?
         <br />
         This is a page to talk about us.
