@@ -18,7 +18,7 @@ export default function Root(props) {
       </p>
       <p className="lead">
         <a href="#foo" className="btn btn-lg btn-secondary">
-          Learn more
+          Learn more. THIS IS A CHANGE ON HOMEPAGE.
         </a>
       </p>
     </section>
