@@ -14,7 +14,7 @@ export default function Root(props) {
       <p className="lead">
         Hey, what's up?
         <br />
-        This is a page to talk about us. A CHANGE ON ABOUT PAGE.
+        This is a page to talk about us.
       </p>
     </section>
   );
