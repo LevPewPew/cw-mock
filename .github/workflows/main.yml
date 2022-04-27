@@ -7,16 +7,21 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy-server:
-    - uses: akhileshns/heroku-deploy@v3.12.12
-      with:
-        heroku_email: ${{ secrets.HEROKU_EMAIL }}
-        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  build-and-deploy-root:
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+
+  deploy-root:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -59,7 +64,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: dist
 
-  build-and-deploy-home-app:
+  deploy-home-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -104,7 +109,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: home-app/dist
 
-  build-and-deploy-about-app:
+  deploy-about-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -149,7 +154,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: about-app/dist
 
-  build-and-deploy-contact-app:
+  deploy-contact-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -194,7 +199,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: contact-app/dist
 
-  build-and-deploy-navbar-app:
+  deploy-navbar-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
