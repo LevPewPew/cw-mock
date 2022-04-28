@@ -1,5 +1,5 @@
 import React from "react";
-// import Parrot from "../../shared-ui/parrot";
+import Parrot from "./shared-ui/parrot";
 
 export default function Root() {
   return (
@@ -9,7 +9,7 @@ export default function Root() {
       </div>
       <h1 className="cover-heading">About Us!</h1>
       <p className="lead">This is a page to talk about us. We are amazing. Send us money.</p>
-      {/* <Parrot /> */}
+      <Parrot />
     </section>
   );
 }

@@ -10,6 +10,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Copy shared UI
+        run: |
+          cp -r shared-ui about-app/src
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:

@@ -1,5 +1,5 @@
 import React from "react";
-// import Parrot from "../../shared-ui/parrot";
+import Parrot from "./shared-ui/parrot";
 
 export default function Root() {
   return (
@@ -17,7 +17,10 @@ export default function Root() {
           Learn more.
         </a>
       </p>
-      {/* <Parrot /> */}
+      <Parrot />
     </section>
   );
 }
+
+// NEXT make shared-ui imports work from root shared-ui folder when local, and the nested copied folder when deployed
+//      is this the best solution? investigate the other options a bit more indepth
