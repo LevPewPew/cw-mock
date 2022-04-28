@@ -21,6 +21,3 @@ export default function Root() {
     </section>
   );
 }
-
-// NEXT make shared-ui imports work from root shared-ui folder when local, and the nested copied folder when deployed
-//      is this the best solution? investigate the other options a bit more indepth
