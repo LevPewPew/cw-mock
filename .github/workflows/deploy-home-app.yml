@@ -20,14 +20,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Copy shared UI
-        run: |
-          cp -r shared-ui home-app/src
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "14.16.0"
+
+      - name: Setup file structure for shared UI
+        run: |
+          cp -r shared-ui home-app/src
 
       - name: Install dependencies
         run: |
