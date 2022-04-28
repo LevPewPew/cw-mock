@@ -1,21 +1,13 @@
 import React from "react";
 
-export default function Root(props) {
+export default function Root() {
   return (
     <section>
       <div className="homepage-hero" style={{ margin: "5rem 0" }}>
-        <img
-          style={{ width: "100%" }}
-          src="https://blog.logrocket.com/wp-content/uploads/2019/05/logrocket-blog.jpg"
-          alt="log rocket logo"
-        />
+        <img src="https://picsum.photos/id/1/600/400" alt="man using laptop" />
       </div>
       <h1 className="cover-heading">Contact Us</h1>
-      <p className="lead">
-        Hey, what's up?
-        <br />
-        This is a page to contact us.
-      </p>
+      <p className="lead">Get in touch with Baron Micro and his gang of Frontends.</p>
     </section>
   );
 }

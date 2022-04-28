@@ -2,17 +2,17 @@ import React from "react";
 
 export default function Root(props) {
   return (
-    <header className="masthead mb-auto">
+    <header className="masthead mb-auto ">
       <div className="inner">
         <a className="blog-logo" href="/">
           <img
-            style={{ maxWidth: "40px" }}
+            style={{ maxWidth: "40px", margin: "20px" }}
             src="https://single-spa.js.org/img/logo-white-bgblue.svg"
-            alt="LogRocket Blog"
+            alt="Single Spa logo"
           />{" "}
           React + single-spa
         </a>
-        <nav className="nav nav-masthead justify-content-center">
+        <nav className="nav nav-pills p-4">
           <a className={`nav-link ${location.pathname === "/" && "active"}`} href="/">
             Home
           </a>

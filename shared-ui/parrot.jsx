@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Parrot() {
+export default function Parrot() {
   const [speech, setSpeech] = useState("");
 
   function handleSpeechFieldChange(e) {
@@ -21,5 +21,3 @@ function Parrot() {
     </div>
   );
 }
-
-export default Parrot;
