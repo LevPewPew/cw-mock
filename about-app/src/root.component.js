@@ -1,4 +1,5 @@
 import React from "react";
+// import Parrot from "../../shared-ui/parrot";
 
 export default function Root(props) {
   return (
@@ -16,6 +17,7 @@ export default function Root(props) {
         <br />
         This is a page to talk about us.
       </p>
+      {/* <Parrot /> */}
     </section>
   );
 }
