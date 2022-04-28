@@ -8,10 +8,7 @@ export default function Root() {
         <img src="https://www.stevensegallery.com/600/400" alt="aerial shot of land and sea" />
       </div>
       <h1 className="cover-heading">About Us!</h1>
-      <p className="lead">
-        This is a page to talk about us. We are amazing. Send us money. THIS IS A CHANGE ON ABOUT
-        APP
-      </p>
+      <p className="lead">This is a page to talk about us. We are amazing. Send us money. APP</p>
       <Parrot />
     </section>
   );

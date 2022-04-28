@@ -17,7 +17,7 @@ export default function Parrot() {
         Speech
         <input onChange={handleSpeechFieldChange} />
       </label>
-      <button onClick={handleTalkButtonClick}>Talk Birdie</button>
+      <button onClick={handleTalkButtonClick}>Talk</button>
     </div>
   );
 }

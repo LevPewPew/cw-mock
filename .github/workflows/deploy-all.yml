@@ -1,0 +1,56 @@
+name: Deploy it all!
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-server-and-mfe-root:
+    uses: ./.github/workflows/deploy-server-and-mfe-root.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+
+  deploy-home-app:
+    uses: ./.github/workflows/deploy-home-app.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+  deploy-about-app:
+    uses: ./.github/workflows/deploy-about-app.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+  deploy-contact-app:
+    uses: ./.github/workflows/deploy-contact-app.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+  deploy-navbar-app:
+    uses: ./.github/workflows/deploy-navbar-app.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+  update-import-map:
+    uses: ./.github/workflows/update-import-map.yml
+    secrets:
+      AWS_PRODUCTION_BUCKET_NAME: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
