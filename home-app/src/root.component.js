@@ -15,7 +15,7 @@ export default function Root(props) {
       <p className="lead">
         This is an example of how powerful micro-frontends can be!
         <br /> You may integrate all of your frontend apps, regardless of what frameworks they're
-        built with.
+        built with. THIS IS A CHANGE ON HOME.
       </p>
       <p className="lead">
         <a href="#foo" className="btn btn-lg btn-secondary">

@@ -15,7 +15,7 @@ export default function Root(props) {
       <p className="lead">
         Hey, what's up?
         <br />
-        This is a page to talk about us.
+        This is a page to talk about us. THIS IS A CHANGE ON ABOUT.
       </p>
       {/* <Parrot /> */}
     </section>
