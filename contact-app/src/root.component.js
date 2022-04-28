@@ -4,7 +4,7 @@ export default function Root() {
   return (
     <section>
       <div className="homepage-hero" style={{ margin: "5rem 0" }}>
-        <img src="https://picsum.photos/id/1/600/400" alt="man using laptop" />
+        <img src="https://www.placecage.com/600/400" alt="man using laptop" />
       </div>
       <h1 className="cover-heading">Contact Us</h1>
       <p className="lead">Get in touch with Baron Micro and his gang of Frontends.</p>
