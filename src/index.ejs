@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
+  <title>Root Config and Server</title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -38,15 +38,6 @@
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
-  <!-- Add your organization's prod import map URL to this script's src  -->
-  <script type="systemjs-importmap" src="https://cw-mock.s3.ap-southeast-2.amazonaws.com/importmap.json"></script>
-
-  <!--
-    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
-
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
   <% if (isLocal) { %>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
@@ -55,6 +46,9 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
   <% } %>
+
+  <!-- Add your organization's prod import map URL to this script's src  -->
+  <script type="systemjs-importmap" src="https://cw-mock.s3.ap-southeast-2.amazonaws.com/importmap.json"></script>
 
   <!-- react and react-dom are dependencies, because they are shared by all
   of the app. this way there aren't 4 copies of react being deployed and 
