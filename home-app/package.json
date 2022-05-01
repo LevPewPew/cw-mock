@@ -1,9 +1,9 @@
 {
   "name": "@acme/home-app",
   "scripts": {
-    "start": "npm run copy-shared-ui && webpack serve",
+    "start": "npm run prepare-shared-ui && webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "copy-shared-ui": "cp -r ../shared-ui src",
+    "prepare-shared-ui": "cp -r ../shared-ui src",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
