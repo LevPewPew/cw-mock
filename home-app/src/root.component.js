@@ -1,5 +1,5 @@
 import React from "react";
-import Parrot from "./shared-ui/parrot";
+import Parrot from "./shared-ui/components/parrot";
 
 export default function Root() {
   return (
