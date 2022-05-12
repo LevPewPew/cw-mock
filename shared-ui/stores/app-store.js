@@ -5,6 +5,9 @@ const appStore = types
     isCookingComplete: types.optional(types.boolean, false),
   })
   .actions((self) => ({
+    setIsCookingComplete(value) {
+      self.isCookingComplete = value;
+    },
     toggleIsCookingComplete() {
       self.isCookingComplete = !self.isCookingComplete;
     },
