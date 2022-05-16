@@ -43,6 +43,7 @@
     "mobx": "5.15.4",
     "mobx-react": "6.1.8",
     "mobx-state-tree": "3.15.0",
-    "single-spa": "4.4.3"
+    "single-spa": "5.9.3",
+    "single-spa-layout": "^2.0.1"
   }
 }
