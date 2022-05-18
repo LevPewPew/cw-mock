@@ -1,21 +1,11 @@
 import React from "react";
-import { Link } from "@reach/router";
+import { NavLink as Link, BrowserRouter as Router } from "react-router-dom";
 
 function NavLink(props) {
-  return (
-    <Link
-      {...props}
-      className="nav-link"
-      getProps={({ isCurrent }) => {
-        return {
-          className: `nav-link ${isCurrent ? "active" : false} `,
-        };
-      }}
-    />
-  );
+  return <Link {...props} className="nav-link" activeClassName="active" />;
 }
 
-export default function Root(props) {
+export default function Root() {
   return (
     <header className="mb-auto masthead ">
       <div className="inner">
@@ -27,11 +17,13 @@ export default function Root(props) {
           />{" "}
           Reload Site and Root App
         </a>
-        <nav className="p-4 nav nav-pills">
-          <NavLink to={"/"}>Home</NavLink>
-          <NavLink to={"/about"}>About Us</NavLink>
-          <NavLink to={"/contact"}>Contact</NavLink>
-        </nav>
+        <Router>
+          <nav className="p-4 nav nav-pills">
+            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/about"}>About Us</NavLink>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </nav>
+        </Router>
       </div>
     </header>
   );
