@@ -87,7 +87,9 @@
     <template id="single-spa-layout">
       <single-spa-router>
         <div style="width: 80vw; max-width: 800px">
-          <application name="@acme/navbar-app"></application>
+          <route path="/">
+            <application name="@acme/navbar-app"></application>
+          </route>
           <main>
             <route exact path="/">
               <application name="@acme/home-app"></application>
