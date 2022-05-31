@@ -9,7 +9,7 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "root-config",
     webpackConfigEnv,
     argv,
-    disableHtmlGeneration: true,
+    disableHtmlGeneration: true, // NEXT try setting this to false!
   });
 
   return merge(defaultConfig, {
@@ -24,5 +24,24 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
     ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+      ],
+    },
+    devServer: {
+      static: ["assets"],
+      open: true,
+      hot: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        // 'X-Content-Type-Options': 'nosniff',
+      },
+      allowedHosts: "all",
+      historyApiFallback: true,
+    },
   });
 };

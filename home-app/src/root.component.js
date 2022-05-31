@@ -17,6 +17,7 @@ export default function Root() {
           Learn more.
         </a>
       </p>
+      <h1 className="foobar">FOOBAR</h1>
       <Parrot />
     </section>
   );
