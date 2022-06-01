@@ -5,6 +5,7 @@
     "mobx": "https://cdn.jsdelivr.net/npm/mobx@5.15.4/dist/mobx.umd.development.js",
     "mobx-react": "https://cdn.jsdelivr.net/npm/mobx-react@6.1.8/dist/mobxreact.umd.development.js",
     "mobx-state-tree": "https://cdn.jsdelivr.net/npm/mobx-state-tree@3.15.0/dist/mobx-state-tree.umd.js",
+    "lodash": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js",
     "@acme/root-config": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/mfe-root/acme-root-config.js",
     "@acme/navbar-app": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/navbar-app/acme-navbar-app.js",
     "@acme/home-app": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/home-app/acme-home-app.js",
