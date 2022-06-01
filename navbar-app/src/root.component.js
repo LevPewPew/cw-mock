@@ -31,7 +31,7 @@ export default function Root() {
         </a>
         <Router>
           <nav className="p-4 nav nav-pills">
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink exact to={"/"}>Home</NavLink>
             <NavLink to={"/about"}>About Us</NavLink>
             <NavLink to={"/contact"}>Contact</NavLink>
           </nav>
