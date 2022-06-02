@@ -4,7 +4,7 @@ import GarlicBread from "./shared-ui/components/garlic-bread";
 import appStore from "./shared-ui/stores/app-store";
 // import { Provider } from "mobx-react";
 import { Provider } from "mobx-react";
-import lodash from "lodash";
+import lowdish from "lodash";
 
 // dummy function to simulate fetching data from server
 async function getCookingStatus() {
@@ -35,7 +35,7 @@ export default function Root() {
         <div className="homepage-hero" style={{ margin: "5rem 0" }}>
           <img src="https://www.stevensegallery.com/600/400" alt="aerial shot of land and sea" />
         </div>
-        <h1 className="cover-heading">{lodash.upperCase("about-us")}</h1>
+        <h1 className="cover-heading">{lowdish.upperCase("about-us")}</h1>
         <p className="lead">This is a page to talk about us. We are amazing. Send us money.</p>
         <Parrot />
         <GarlicBread />
