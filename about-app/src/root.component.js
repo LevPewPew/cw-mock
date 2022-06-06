@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Parrot from "./shared-ui/components/parrot";
 import GarlicBread from "./shared-ui/components/garlic-bread";
+import BasicChart from "./shared-ui/components/basic-chart";
 import appStore from "./shared-ui/stores/app-store";
 // import { Provider } from "mobx-react";
 import { Provider } from "mobx-react";
@@ -39,6 +40,7 @@ export default function Root() {
         <p className="lead">This is a page to talk about us. We are amazing. Send us money.</p>
         <Parrot />
         <GarlicBread />
+        <BasicChart />
       </section>
     </Provider>
   );
