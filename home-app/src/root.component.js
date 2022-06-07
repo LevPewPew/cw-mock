@@ -1,11 +1,12 @@
 import React from "react";
-import Parrot from "./shared-ui/components/parrot";
+import Parrot from "@Components/parrot";
+import officeImage from "@Assets/images/stock-3.jpg";
 
 export default function Root() {
   return (
     <section>
       <div className="homepage-hero" style={{ margin: "5rem 0" }}>
-        <img src="https://www.fillmurray.com/600/400" alt="house" />
+        <img src={officeImage} alt="office" style={{ height: 300, width: 500 }} />
       </div>
       <h1 className="cover-heading">Welcome to the micro-frontend world!</h1>
       <p className="lead">

@@ -28,6 +28,8 @@ jobs:
       - name: Setup file structure for shared UI
         run: |
           cp -r shared-ui navbar-app/src
+          rm navbar-app/src/shared-ui/package-lock.json
+          rm navbar-app/src/shared-ui/package.json
 
       - name: Install dependencies
         run: |
