@@ -27,9 +27,7 @@ jobs:
 
       - name: Setup file structure for shared UI
         run: |
-          cp -r shared-ui home-app/src
-          rm home-app/src/shared-ui/package-lock.json
-          rm home-app/src/shared-ui/package.json
+          rsync -a --exclude={'package.json','package-lock.json','node_modules'} shared-ui home-app/src
 
       - name: Install dependencies
         run: |

@@ -3,7 +3,7 @@
   "scripts": {
     "start": "npm run prepare-shared-ui && webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "prepare-shared-ui": "cp -r ../shared-ui src",
+    "prepare-shared-ui": "rsync -a --exclude={'package.json','package-lock.json','node_modules'} ../shared-ui src",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
@@ -35,7 +35,7 @@
     "jest-cli": "^27.0.6",
     "prettier": "^2.3.2",
     "webpack": "4.39.2",
-    "webpack-cli": "3.3.7",
+    "webpack-cli": "^4.10.0",
     "webpack-config-single-spa-react": "1.18.3",
     "webpack-dev-server": "3.11.2",
     "webpack-merge": "5.8.0"

@@ -5,7 +5,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "start:dev": "webpack serve --port 9000 --env isLocal",
+    "start:dev": "webpack serve --port 9100 --env isLocal",
     "lint": "eslint src --ext js",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
@@ -31,7 +31,7 @@
     "prettier": "^2.3.2",
     "serve": "^12.0.0",
     "webpack": "4.39.2",
-    "webpack-cli": "3.3.7",
+    "webpack-cli": "^4.10.0",
     "webpack-config-single-spa-react": "1.18.3",
     "webpack-dev-server": "3.11.2",
     "webpack-merge": "5.8.0"

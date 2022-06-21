@@ -27,9 +27,7 @@ jobs:
 
       - name: Setup file structure for shared UI
         run: |
-          cp -r shared-ui navbar-app/src
-          rm navbar-app/src/shared-ui/package-lock.json
-          rm navbar-app/src/shared-ui/package.json
+          rsync -a --exclude={'package.json','package-lock.json','node_modules'} shared-ui navbar-app/src
 
       - name: Install dependencies
         run: |
