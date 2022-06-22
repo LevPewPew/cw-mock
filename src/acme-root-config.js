@@ -10,4 +10,5 @@ const layoutEngine = constructLayoutEngine({ routes, applications, active: false
 applications.forEach(registerApplication);
 
 layoutEngine.activate();
+
 start();
