@@ -14,5 +14,3 @@ but it is also built in S3 and the index built in heroku is actually pulling it 
 the bucket via the import map. i think?
 
 it doesn't create any problems but it's not a "clean" solution */
-
-// NEXT why are all the errors back suddenly, when i fixed it ages ago?

@@ -1,4 +1,10 @@
 {
+  "env": {
+    "node": true
+  },
   "extends": ["important-stuff", "plugin:prettier/recommended"],
-  "parser": "@babel/eslint-parser"
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "no-console": "off"
+  }
 }

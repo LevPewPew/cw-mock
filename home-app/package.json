@@ -1,5 +1,8 @@
 {
   "name": "@acme/home-app",
+  "engines": {
+    "node": "14.16.0"
+  },
   "scripts": {
     "start": "npm run prepare-shared-ui && webpack serve",
     "start:standalone": "webpack serve --env standalone",
