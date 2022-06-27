@@ -3,7 +3,7 @@
   "scripts": {
     "start": "npm run prepare-shared-ui && webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "prepare-shared-ui": "rsync -a --exclude={'package.json','package-lock.json','node_modules'} ../shared-ui src",
+    "prepare-shared-ui": "rsync -a --exclude={'package.json','package-lock.json','node_modules','jest.config.js','babel.config.json','webpack.config.js'} ../shared-ui src",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",

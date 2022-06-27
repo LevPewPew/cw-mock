@@ -1,5 +1,5 @@
 module.exports = {
-  rootDir: "src",
+  rootDir: ".",
   testEnvironment: "jsdom",
   transform: {
     "^.+\\.(j|t)sx?$": "babel-jest",

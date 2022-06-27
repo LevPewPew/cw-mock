@@ -27,7 +27,7 @@ jobs:
 
       - name: Setup file structure for shared UI
         run: |
-          rsync -a --exclude={'package.json','package-lock.json','node_modules'} shared-ui navbar-app/src
+          rsync -a --exclude={'package.json','package-lock.json','node_modules','jest.config.js','babel.config.json','webpack.config.js'} shared-ui navbar-app/src
 
       - name: Install dependencies
         run: |

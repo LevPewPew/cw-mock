@@ -1,5 +1,4 @@
 import { types } from "mobx-state-tree";
-// import MST from "mobx-state-tree";
 
 const appStore = types
   .model("AppStore", {
