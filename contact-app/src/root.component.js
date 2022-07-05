@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import GarlicBread from "./shared-ui/components/garlic-bread";
-import appStore from "./shared-ui/stores/app-store";
+import { GarlicBread, store } from "@levpewpew/cw-mock-shared";
 import { Provider } from "mobx-react";
 
 // dummy function to simulate fetching data from server
@@ -11,7 +10,7 @@ async function getCookingStatus() {
   };
 }
 
-const store = appStore.create({});
+const initialisedStore = store.appStore.create({});
 
 export default function Root() {
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function Root() {
   }, []);
 
   return (
-    <Provider store={store}>
+    <Provider store={initialisedStore}>
       <section>
         <div className="homepage-hero" style={{ margin: "5rem 0" }}></div>
         <h1 className="cover-heading">Contact Us</h1>

@@ -1,5 +1,5 @@
 import React from "react";
-import Parrot from "@Components/parrot";
+import { Parrot } from "@levpewpew/cw-mock-shared";
 import officeImage from "@Assets/images/stock-3.jpg";
 
 export default function Root() {

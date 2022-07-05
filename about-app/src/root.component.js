@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import Parrot from "./shared-ui/components/parrot";
-import GarlicBread from "./shared-ui/components/garlic-bread";
-import appStore from "./shared-ui/stores/app-store";
+import { GarlicBread, Parrot, store } from "@levpewpew/cw-mock-shared";
 import { Provider } from "mobx-react";
 
 // dummy function to simulate fetching data from server
@@ -12,7 +10,7 @@ async function getCookingStatus() {
   };
 }
 
-const store = appStore.create({});
+const initialisedStore = store.appStore.create({});
 
 export default function Root() {
   useEffect(() => {
@@ -20,7 +18,7 @@ export default function Root() {
       const cookingStatusResponse = await getCookingStatus();
 
       if (cookingStatusResponse) {
-        store.setIsCookingComplete(cookingStatusResponse.isCookingComplete);
+        initialisedStore.setIsCookingComplete(cookingStatusResponse.isCookingComplete);
       }
     }
 
@@ -28,7 +26,7 @@ export default function Root() {
   }, []);
 
   return (
-    <Provider store={store}>
+    <Provider store={initialisedStore}>
       <section>
         <div className="homepage-hero" style={{ margin: "5rem 0" }}></div>
         <h1 className="cover-heading">About Us</h1>
