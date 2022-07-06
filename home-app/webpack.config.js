@@ -26,9 +26,6 @@ module.exports = (webpackConfigEnv, argv) => {
         "@Components": path.resolve(__dirname, "./src/shared-ui/components"),
         "@Stores": path.resolve(__dirname, "./src/shared-ui/stores"),
       },
-      extensions: [".js", ".jsx"],
     },
   });
 };
-
-// NEXT do i actually need the "extentions" config? try remove once shared repo being importer
