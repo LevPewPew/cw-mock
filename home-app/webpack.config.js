@@ -20,12 +20,5 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
-    resolve: {
-      alias: {
-        "@Assets": path.resolve(__dirname, "./src/assets"),
-        "@Components": path.resolve(__dirname, "./src/shared-ui/components"),
-        "@Stores": path.resolve(__dirname, "./src/shared-ui/stores"),
-      },
-    },
   });
 };
