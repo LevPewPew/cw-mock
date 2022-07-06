@@ -20,5 +20,10 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
+    resolve: {
+      alias: {
+        "@Assets": path.resolve(__dirname, "./src/assets"),
+      },
+    },
   });
 };
