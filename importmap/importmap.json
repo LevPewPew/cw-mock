@@ -2,6 +2,7 @@
   "imports": {
     "react": "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.development.js",
     "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.development.js",
+    "@acme/root-config": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/mfe-root/acme-root-config.js",
     "@acme/navbar-app": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/navbar-app/acme-navbar-app.js",
     "@acme/home-app": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/home-app/acme-home-app.js",
     "@acme/about-app": "https://cw-mock.s3.ap-southeast-2.amazonaws.com/about-app/acme-about-app.js",
