@@ -1,9 +1,8 @@
 {
   "name": "@acme/navbar-app",
   "scripts": {
-    "start": "npm run prepare-shared-ui && webpack serve",
+    "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "prepare-shared-ui": "rsync -a --exclude={'package.json','package-lock.json','node_modules','jest.config.js','babel.config.json','webpack.config.js'} ../shared-ui src",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
@@ -41,9 +40,10 @@
     "webpack-merge": "5.8.0"
   },
   "dependencies": {
-    "react-router-dom": "5.1.2",
-    "single-spa-react": "4.6.1",
+    "@levpewpew/cw-mock-shared": "^0.1.13",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "5.1.2",
+    "single-spa-react": "4.6.1"
   }
 }
